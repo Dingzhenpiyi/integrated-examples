@@ -141,6 +141,14 @@
               }
             },
             {
+              "handler": "headers",
+              "response": {
+                "set": {
+                  "Alt-Svc": ["h3=\":443\"; ma=2592000"] //通告 HTTP/3 server 的可用性（对外使用代理的 UDP 443 端口才需要配置）
+                }
+              }
+            },
+            {
               "handler": "file_server",
               "root": "/var/www/html" //修改为自己存放的 WEB 文件路径
             }]
